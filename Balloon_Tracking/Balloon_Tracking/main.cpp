@@ -71,13 +71,13 @@ int main( int argc, char** argv )
         Mat imgThresholded;
         
         inRange(imgHSV, Scalar(iLowH, iLowS, iLowV), Scalar(iHighH, iHighS, iHighV), imgThresholded);
-
+        
         erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
         dilate( imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
         
         dilate( imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
         erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
-
+        
         Moments oMoments = moments(imgThresholded);
         
         double dM01 = oMoments.m01;
@@ -107,7 +107,7 @@ int main( int argc, char** argv )
         if (waitKey(30) == 27)
         {
             cout << "esc key is pressed by user" << endl;
-            break; 
+            break;
         }
     }
     
