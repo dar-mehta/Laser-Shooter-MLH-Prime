@@ -63,7 +63,7 @@ int main(int argc, char** argv)
             if (iLastX >= 0 && iLastY >= 0 && posX >= 0 && posY >= 0)
                 line(imgLines, Point(posX, posY), Point(iLastX, iLastY), Scalar(0, 0, 255), 2);
             tarPosX = 2 * posX - iLastX;
-            tarPosY = posY + ((posY - iLastY) * .87)
+            tarPosY = posY + ((posY - iLastY) * .87);
             iLastX = posX;
             iLastY = posY;
         }
@@ -79,6 +79,8 @@ int main(int argc, char** argv)
     }
     return 0;
 }
+
+/*
 void Transmit()
 {
     //open arduino device file (linux)
@@ -88,4 +90,4 @@ void Transmit()
         arduino << tarPosX && "," && tarPosY << std::endl;
     arduino.close();
     return 0;
-}
+}*/
